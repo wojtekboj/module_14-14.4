@@ -43,7 +43,7 @@ var movies = [
 
 var MoviesList = React.createClass({
     propTypes: {
-        movies: React.PropTypes.object.isRequired
+        movies: React.PropTypes.array.isRequired
     },
     render: function () {
         var moviesElements = movies.map((movie, id) => (
