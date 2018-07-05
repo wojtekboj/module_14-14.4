@@ -13,7 +13,7 @@ var movies = [
         desc: 'Film o królu sawanny',
         duration: '1 godz. 29 min.',
         year: '1994',
-        img: 'http://1.fwcdn.pl/po/68/78/6878/7046736.2.jpg'
+        img: 'https://1.fwcdn.pl/po/68/78/6878/7046736.2.jpg'
   },
     {
         id: 3,
@@ -21,7 +21,7 @@ var movies = [
         year: '2010',
         duration: '2 godz. 28 min.',
         desc: 'Film o wszczepianiu myśli',
-        img: 'http://1.fwcdn.pl/po/08/91/500891/7351782.2.jpg'
+        img: 'https://1.fwcdn.pl/po/08/91/500891/7351782.2.jpg'
     },
     {
         id: 4,
