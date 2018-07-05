@@ -41,25 +41,6 @@ var movies = [
     }
 ];
 
-var MoviesList = React.createClass({
-    propTypes: {
-        movies: React.PropTypes.array.isRequired
-    },
-    render: function () {
-        var moviesElements = movies.map((movie, id) => (
-            React.createElement(Movie, {key: id, title: movie.title, duration: movie.duration, year: movie.year, desc: movie.desc, img: movie.img}
-            )
-    )
-);
-        return (
-            React.createElement('div', {},
-                React.createElement('h1', {}, 'Lista filmów'),
-                React.createElement('ul', {}, moviesElements)
-            )
-        );
-    }
-});
-
 var Movie = React.createClass({
     propTypes: {
         title: React.PropTypes.string.isRequired,
@@ -80,6 +61,25 @@ var Movie = React.createClass({
                     desc: this.props.desc,
                     img: this.props.img
                 })
+            )
+        );
+    }
+});
+
+var MoviesList = React.createClass({
+    propTypes: {
+        movies: React.PropTypes.array.isRequired
+    },
+    render: function () {
+        var moviesElements = movies.map((movie, id) => (
+            React.createElement(Movie, {key: id, title: movie.title, duration: movie.duration, year: movie.year, desc: movie.desc, img: movie.img}
+            )
+    )
+);
+        return (
+            React.createElement('div', {},
+                React.createElement('h1', {}, 'Lista filmów'),
+                React.createElement('ul', {}, moviesElements)
             )
         );
     }
