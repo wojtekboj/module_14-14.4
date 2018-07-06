@@ -56,9 +56,15 @@ var Movie = React.createClass({
                     title: this.props.title
                 }),
                 React.createElement(MovieDescription, {
-                    duration: this.props.duration,
-                    year: this.props.year,
-                    desc: this.props.desc,
+                    desc: this.props.desc
+                }),
+                React.createElement(MovieDuration, {
+                    duration: this.props.duration
+                }),
+                React.createElement(MovieYear, {
+                    year: this.props.year
+                }),
+                React.createElement(MovieImg, {
                     img: this.props.img
                 })
             )
@@ -98,21 +104,46 @@ var MovieTitle = React.createClass({
 
 var MovieDescription = React.createClass({
     propTypes: {
-        duration: React.PropTypes.string.isRequired,
-        year: React.PropTypes.string.isRequired,
-        desc: React.PropTypes.string.isRequired,
-        img: React.PropTypes.string.isRequired
+        desc: React.PropTypes.string.isRequired
     },
     render: function () {
         return (
             React.createElement('div', {},
-                React.createElement('p', {}, 'Czas trwania: ', this.props.duration),
-                React.createElement('p', {}, 'Data premiery: ', this.props.year),
-                React.createElement('p', {}, 'Opis: ', this.props.desc),
-                React.createElement('img', {
-                    src: this.props.img
-                })
+                React.createElement('p', {}, 'Opis: ', this.props.desc)
             )
+        );
+    }
+});
+
+var MovieDuration = React.createClass({
+    propTypes: {
+        duration: React.PropTypes.string.isRequired
+    },
+    render: function () {
+        return (
+            React.createElement('p', {}, 'Czas trwania: ', this.props.duration)
+        );
+    }
+});
+
+var MovieYear = React.createClass({
+    propTypes: {
+        year: React.PropTypes.string.isRequired
+    },
+    render: function () {
+        return (
+            React.createElement('p', {}, 'Data premiery: ', this.props.year)
+        );
+    }
+});
+
+var MovieImg = React.createClass({
+    propTypes: {
+        img: React.PropTypes.string.isRequired
+    },
+    render: function () {
+        return (
+            React.createElement('img', {src: this.props.img})
         );
     }
 });
